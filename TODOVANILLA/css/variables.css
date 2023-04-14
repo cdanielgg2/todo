@@ -1,0 +1,17 @@
+:root {
+    --color-primary-lightest:    hsl(212, 67%, 95%);
+    --color-primary-lighter:     hsl(212, 67%, 85%);
+    --color-primary-light:       hsl(212, 67%, 76%);
+    --color-primary-lighty:      hsl(212, 67%, 65%);
+    --color-primary:             hsl(212, 68%, 61%);
+    --color-primary-darky:       hsl(212, 57%, 51%);
+    --color-primary-dark:        hsl(212, 60%, 40%);
+    --color-primary-darker:      hsl(212, 60%, 25%);
+    --color-primary-darkest:     hsl(212, 50%, 10%);
+
+    --color-bg-main:    var(--color-primary-light);
+    --color-bg-second:  var(--color-primary-lightest);
+
+    --color-font-primary:   var(--color-primary-dark);
+    --color-font-title:     var(--color-primary-darkest);
+}

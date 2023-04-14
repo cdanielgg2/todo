@@ -1,0 +1,113 @@
+.todo {
+    background: white;
+    padding: 1rem;
+  
+    min-width: 640px;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  
+  
+  .todo-list h1 {
+    color: white;
+  }
+  
+  .todo-list__title {
+    color: red;
+  
+  }
+  
+  .todo__task {
+    display: flex;
+  }
+  
+  .todo__task-text {
+    flex-grow: 1;
+  }
+  
+  .todo-list__title {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  
+  .todo__input {
+    flex-grow: 1;
+  
+  }
+  
+  .todo__add-button {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #008cba;
+    color: #fff;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .todo__add-button:hover {
+    background-color: #005a7c;
+  }
+  
+  .todo__list {
+    margin-top: 1rem;
+  }
+  
+  .todo_task {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .todo__task:nth-child(odd) {
+    background: var(--color-primary-lighter);
+  }
+  
+  .todo__task-text {
+    flex-grow: 1;
+    padding-left: 1rem;
+  }
+  
+  .todo__done-input:checked + .todo__task-text {
+    margin-right: 10px;
+  }
+  
+  .todo__task-edit-button,
+  .todo__task-delete-button {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .todo__title {
+    width: 100%;
+    color: var(--color-font-title);
+  }
+  
+  .todo__input-wrapper {
+    display: flex;
+    margin-top: 1rem;
+  }
+
+  .todo__delete-selected-button{
+    padding: 10px;
+    font-size: 16px;
+    background-color: #008cba;
+    color: #fff;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+   margin-left: 10px;
+  }
