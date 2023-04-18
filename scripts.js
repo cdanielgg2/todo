@@ -3,31 +3,49 @@ const todoInput = document.querySelector(".todo__input");
 const todoList = document.querySelector(".todo__list");
 const addButton = document.querySelector(".todo__add-button");
 
-//darle un listener al boton
-addButton.addEventListener("click", function () {
+function addTask() {
   // Obtener el valor del input
   const todoText = todoInput.value;
   //mostrar por consola el valor del input
   console.log(todoText)
 
   // Crear un nuevo elemento de lista
-  const lista = document.createElement("div");
-  lista.classList.add("todo__task");
-  lista.innerHTML = `
-  <input type="checkbox" class="todo__done-input" />
-  <div class="todo__task-text">${todoText}</div>
-  <button class="todo__task-edit-button">✏️</button>
-  <button class="todo__task-delete-button">🗑️</button>
-`;
+  const fila = document.createElement("div");
+  fila.classList.add("todo__task");
+  fila.innerHTML = `
+    <input type="checkbox" class="todo__done-input" />
+    <div class="todo__task-text">${todoText}</div>
+    <button class="todo__task-edit-button">✏️</button>
+    <button class="todo__task-delete-button">🗑️</button>
+  `
+
+  const taskText = fila.querySelector('.todo__task-text')
+  taskText.addEventListener('keydown', (event)=>{
+    if (event.keyCode == 13) {
+      taskText.removeAttribute('contenteditable')
+      taskText.textContent = taskText.textContent.trim()
+    }
+  })
+
+
 
   // Agregar el nuevo elemento de lista al contenedor de lista
-  todoList.appendChild(lista);
+  todoList.appendChild(fila);
 
 
   // Limpiar el valor del input
   todoInput.value = "";
-});
+}
 
+//darle un listener al boton
+addButton.addEventListener("click", addTask);
+
+
+todoInput.addEventListener('keydown', (event) => {
+  if (event.keyCode == 13) {
+    addTask()
+  }
+})
 
 
 
@@ -39,14 +57,8 @@ todoList.addEventListener("click", function (event) {
   if (target.classList.contains("todo__task-edit-button")) {
     const task = target.closest(".todo__task");
     const text = task.querySelector(".todo__task-text");
-
-    // Convertir el texto en un input editable
-    text.innerHTML = `<input type="text" value="${text.innerText}" />`;
-    
-
-    // Cambiar el texto del botón de edición a "Guardar"
-    target.innerText = "Guardar";
-  
+    text.setAttribute('contenteditable', true)
+    text.focus()
   }
 
   // Si se hace clic en el botón de eliminar
